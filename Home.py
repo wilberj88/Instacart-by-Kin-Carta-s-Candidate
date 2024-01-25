@@ -59,7 +59,7 @@ with xmr_col:
 with sol_col:
     with st.container(border=True):
         #sol_price = requests.get(f'https://api.taapi.io/price?secret={api_key}&exchange=binance&symbol=SOL/USDT&interval=1m').json()['value']
-        st.markdown(f'<p class="sol_text">Best Product<br></p><p class="price_details">ID 24852</p>', unsafe_allow_html = True)
+        st.markdown(f'<p class="sol_text">Best Product<br></p><p class="price_details">ID 24.852</p>', unsafe_allow_html = True)
 
 
 
