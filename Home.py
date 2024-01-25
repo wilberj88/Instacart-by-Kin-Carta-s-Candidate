@@ -37,7 +37,7 @@ with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
 
 
-title_col, emp_col, btc_col, eth_col, xmr_col, sol_col = st.columns([2,0.2,1,1,1,1])
+title_col, emp_col, btc_col, eth_col, xmr_col, sol_col = st.columns([2,0.1,1,1,1,1])
 
 with title_col:
     st.markdown('<p class="dashboard_title">Instacart 🛒 Dashboard<br>Marketing Team</p>', unsafe_allow_html = True)
