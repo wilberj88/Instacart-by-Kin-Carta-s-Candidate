@@ -15,6 +15,12 @@ from streamlit_folium import st_folium
 from streamlit_extras.grid import grid
 from streamlit_extras.colored_header import colored_header
 import streamlit.components.v1 as com
+import sqlite3 as sq3
+import pandas.io.sql as pds
+
+
+path = "/content/gdrive/MyDrive/Novus/Clientes/Kin+Carta/instacart.db"
+con = sq3.Connection(path)
 
 if "symbols_list" not in st.session_state:
     st.session_state.symbols_list = None
@@ -61,6 +67,15 @@ with sol_col:
         #sol_price = requests.get(f'https://api.taapi.io/price?secret={api_key}&exchange=binance&symbol=SOL/USDT&interval=1m').json()['value']
         st.markdown(f'<p class="sol_text">Best Product<br></p><p class="price_details">ID 24.852</p>', unsafe_allow_html = True)
 
+
+
+query_deparments = """
+SELECT *
+FROM departments
+"""
+
+departments = pd.read_sql(query_deparments, con)
+st.write(departments)
 
 
 params_col, chart_col, data_col = st.columns([0.7,1.6,1.1])
