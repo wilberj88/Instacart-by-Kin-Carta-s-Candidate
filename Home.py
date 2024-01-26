@@ -27,7 +27,7 @@ st.set_page_config(
     page_title = '🛒 Instacart Dashboard Demo'
 )
 
-df_departments = pd.read_csv("data/Departments.csv", index_col=0)
+df_departments = pd.read_csv("data/Deparments.csv", index_col=0)
 st.write(df_departments)
 
 st.markdown(
