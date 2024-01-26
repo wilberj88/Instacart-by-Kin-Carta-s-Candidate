@@ -30,6 +30,16 @@ st.set_page_config(
 df_departments = pd.read_csv("data/Deparments.csv", index_col=0)
 st.write(df_departments)
 
+df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
+st.write(df_orders)
+
+df_aisles =  pd.read_csv("data/Aisles.csv", index_col=0)
+st.write(df_aisles)
+
+df_products =  pd.read_csv("data/Products.csv", index_col=0)
+st.write(df_products)
+
+
 st.markdown(
     """
     <style>
