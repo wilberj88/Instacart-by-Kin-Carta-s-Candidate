@@ -18,7 +18,7 @@ import streamlit.components.v1 as com
 import sqlite3 as sq3
 import pandas.io.sql as pds
 
-path = st.connection('DB_URL', type='sql')
+path = st.connection('instacart_db', type='sql')
 
 con = sq3.Connection(path)
 
