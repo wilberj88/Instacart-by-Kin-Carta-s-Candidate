@@ -18,9 +18,6 @@ import streamlit.components.v1 as com
 import sqlite3 as sq3
 import pandas.io.sql as pds
 
-con = sq3.connect('instacart_db')
-    
-
 
 if "symbols_list" not in st.session_state:
     st.session_state.symbols_list = None
@@ -29,6 +26,13 @@ st.set_page_config(
     layout = 'wide',
     page_title = '🛒 Instacart Dashboard Demo'
 )
+
+if "departments" not in st.session_state:
+  df_departments = pd.read_csv("data/Departments.csv", index_col=0)
+  st.session_state["data"] = df_data
+
+df_departments = st.session_state["departments"]
+st.write(df_departments)
 
 st.markdown(
     """
