@@ -22,6 +22,9 @@ import pandas.io.sql as pds
 path = "/content/gdrive/MyDrive/Novus/Clientes/Kin+Carta/instacart.db"
 con = sq3.Connection(path)
 
+    
+
+
 if "symbols_list" not in st.session_state:
     st.session_state.symbols_list = None
     
@@ -66,6 +69,7 @@ with sol_col:
     with st.container(border=True):
         #sol_price = requests.get(f'https://api.taapi.io/price?secret={api_key}&exchange=binance&symbol=SOL/USDT&interval=1m').json()['value']
         st.markdown(f'<p class="sol_text">Best Product<br></p><p class="price_details">ID 24.852</p>', unsafe_allow_html = True)
+
 
 
 
