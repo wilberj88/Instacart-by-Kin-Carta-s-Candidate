@@ -10,4 +10,3 @@ streamlit_option_menu
 folium
 streamlit_folium
 streamlit_extras
-sqlite3
