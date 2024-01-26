@@ -70,14 +70,6 @@ with sol_col:
 
 
 
-query_deparments = """
-SELECT *
-FROM departments
-"""
-
-departments = pd.read_sql(query_deparments, con)
-st.write(departments)
-
 
 params_col, chart_col, data_col = st.columns([0.7,1.6,1.1])
 
