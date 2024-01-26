@@ -18,10 +18,7 @@ import streamlit.components.v1 as com
 import sqlite3 as sq3
 import pandas.io.sql as pds
 
-
-con = st.connection("instacart_db", type="sql", autocommit=True)
-
-
+con = sq3.connect('instacart_db')
     
 
 
