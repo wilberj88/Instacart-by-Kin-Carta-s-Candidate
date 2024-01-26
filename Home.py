@@ -27,11 +27,7 @@ st.set_page_config(
     page_title = '🛒 Instacart Dashboard Demo'
 )
 
-if "departments" not in st.session_state:
-  df_departments = pd.read_csv("data/Departments.csv", index_col=0)
-  st.session_state["data"] = df_data
-
-df_departments = st.session_state["departments"]
+df_departments = pd.read_csv("data/Departments.csv", index_col=0)
 st.write(df_departments)
 
 st.markdown(
