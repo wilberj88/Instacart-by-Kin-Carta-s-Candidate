@@ -21,6 +21,8 @@ st.header('Offers Strategy 🏷️')
 
 colored_header(
     label="Historic Data: Clients and Purchases by Days",
-    description="By hot & cold clients",
+    description="By hot & cold clients. Circa 2012",
     color_name="violet-70",
 )
+
+a = st.selectbox("Choose a Module", ("Days", "Products", "Hours"), index=None, placeholder="Choose an option")
