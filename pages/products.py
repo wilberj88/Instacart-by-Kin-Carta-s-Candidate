@@ -24,3 +24,6 @@ colored_header(
     description="By days and hot & cold trends",
     color_name="violet-70",
 )
+
+
+a = st.selectbox("Choose a Module", ("Days", "Products", "Hours"), index=None, placeholder="Choose an option")
