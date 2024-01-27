@@ -12,3 +12,4 @@ streamlit_folium
 streamlit_extras
 sqlalchemy
 pytrends
+seaborn
