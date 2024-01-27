@@ -20,7 +20,7 @@ st.write("In real time monitoring at: ", current_time)
 st.header('Communication Strategy 📢')
 
 colored_header(
-    label="Historic Data - Repurchase",
+    label="Historic Data - Repurchases",
     description="By days, clients & products",
     color_name="violet-70",
 )
