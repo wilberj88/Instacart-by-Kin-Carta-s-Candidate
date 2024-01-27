@@ -35,3 +35,5 @@ col2.metric("Best Day", "Sunday", "33%")
 col3.metric("Best Client", "ID 72.726", "25%")
 col4.metric("Best Product", "ID 24.852", "17%")
 
+df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
+st.write(df_orders)
