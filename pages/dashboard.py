@@ -59,8 +59,8 @@ with col5:
             )
         df_productos_mas_menos_pedidos = pd.DataFrame(
                     {
-                        "Ranking": ["Top1 Sales", "Top2 Sales", "Top3 Sales"],
-                        "url": ["https://roadmap.streamlit.app", "https://extras.streamlit.app", "https://issues.streamlit.app"],
+                        "Top Sales": ["Top1", "Top2", "Top3"],
+                        "id": ["24852", "13176", "21137"],
                         "stars": ["5", "5", "5"],
                         "views_history": [[random.randint(0, 5000) for _ in range(30)] for _ in range(3)],
                     }
@@ -68,13 +68,12 @@ with col5:
         st.dataframe(
                     df_productos_mas_menos_pedidos,
                     column_config={
-                        "Ranking": "Servicios",
+                        "Top Sales": "Ranking",
                         "stars": st.column_config.NumberColumn(
                             "Github Stars",
                             help="Number of stars on GitHub",
                             format="%d ⭐",
                         ),
-                        "url": st.column_config.LinkColumn("Link App URL"),
                         "views_history": st.column_config.LineChartColumn(
                             "Ventas (past 30 days)", y_min=0, y_max=5000
                         ),
