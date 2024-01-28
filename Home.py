@@ -19,6 +19,11 @@ import sqlite3 as sq3
 import pandas.io.sql as pds
 from PIL import Image
 
+st.set_page_config(
+    layout = 'wide',
+    page_title = '🛒 Instacart Dashboard Demo'
+)
+
 with st.sidebar:
     image = Image.open('KinCartalogo.png')
     st.image(image, caption='Demo Novus Mando: Monitor en Tiempo Real de Productividad Actual Vs Histórica. Alarmas y Recomendaciones para Planta Zamora 🏭')
@@ -28,10 +33,7 @@ with st.sidebar:
 if "symbols_list" not in st.session_state:
     st.session_state.symbols_list = None
     
-st.set_page_config(
-    layout = 'wide',
-    page_title = '🛒 Instacart Dashboard Demo'
-)
+
 
 df_departments = pd.read_csv("data/Deparments.csv", index_col=0)
 st.write(df_departments)
