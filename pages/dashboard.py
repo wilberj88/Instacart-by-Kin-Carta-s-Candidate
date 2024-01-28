@@ -52,7 +52,7 @@ col5, col6, col7 = st.columns(3)
 with col5:
      with st.container(border=True):
         st.header('Product 📦')
-         colored_header(
+        colored_header(
         label="Historic Data - Purchases",
         description="By days and hot & cold trends",
         color_name="violet-70",
