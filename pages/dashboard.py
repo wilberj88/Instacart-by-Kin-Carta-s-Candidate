@@ -65,7 +65,7 @@ with col5:
                         "views_history": [[random.randint(0, 5000) for _ in range(30)] for _ in range(3)],
                     }
                 )
-         st.dataframe(
+        st.dataframe(
                     df_productos_mas_menos_pedidos,
                     column_config={
                         "Ranking": "Servicios",
