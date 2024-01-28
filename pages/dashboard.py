@@ -35,7 +35,7 @@ colA.title('Instacart real time Dashboard 🛒')
 colB.title(' Marketing Decission´s Team')
 
 colX, colY, colZ = st.columns(3)
-colY.header('Historic Patters (circa 2012)')
+colY.header('Historical Patterns (circa 2012)')
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Best Hour", "10:00", "20%")
