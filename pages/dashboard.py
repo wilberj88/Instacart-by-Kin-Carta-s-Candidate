@@ -52,16 +52,25 @@ col5, col6, col7 = st.columns(3)
 with col5:
      with st.container(border=True):
         colored_header(
-        label="Products 📦",
-        description="By days and hot & cold trends",
-        color_name="violet-70",
-        )
+            label="Products 📦",
+            description="By days and hot & cold trends",
+            color_name="violet-70",
+            )
                    
         
 with col6:
-    st.header('Offers 🏷️')
+    colored_header(
+        label="Offers 🏷️",
+        description="By days and hot & cold trends",
+        color_name="violet-70",
+        )
+    
 with col7:
-    st.header('Communications 📢')
+    colored_header(
+        label="Communications 📢",
+        description="By days and hot & cold trends",
+        color_name="violet-70",
+        )
 
 
 
