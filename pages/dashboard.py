@@ -45,27 +45,29 @@ col4.metric("Best Product", "ID 24.852", "17%")
 
 colX, colY, colZ = st.columns(3)
 colY.header('Strategies 🗺️ & Tactics 🔫')
-colY.subheader('In real time monitoring at:')
-current_time = time.ctime()
-colY.write(current_time)
+
 
      
 col5, col6, col7 = st.columns(3)
 with col5:
      with st.container(border=True):
-        st.header('Product Strategy 📦')
-       
+        st.header('Product 📦')
+         colored_header(
+        label="Historic Data - Purchases",
+        description="By days and hot & cold trends",
+        color_name="violet-70",
+        )
+                   
         
 with col6:
-    st.header('Offers Strategy 🏷️')
+    st.header('Offers 🏷️')
 with col7:
-    st.header('Communications Strategy 📢')
+    st.header('Communications📢')
 
 
-colored_header(
-    label="Historic Data - Purchases",
-    description="By days and hot & cold trends",
-    color_name="violet-70",
-)
 
 
+
+st.subheader('In real time monitoring at:')
+current_time = time.ctime()
+st.write(current_time)
