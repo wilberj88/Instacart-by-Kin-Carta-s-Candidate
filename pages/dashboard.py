@@ -82,13 +82,7 @@ with col5:
                 )
          
         df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
-        st.dataframe(df_orders,
-                     st.column_config.BarChartColumn(
-                            "Sales by hours",
-                            help="Circa 2012",
-                            y_min=0,
-                            y_max=23))
-                        
+        st.bar_chart(df_orders)
        
                    
         
