@@ -28,23 +28,7 @@ with st.sidebar:
     image = Image.open('KinCartalogo.png')
     st.image(image, caption='Demo sourced by 🛒 Instacart DB and APIs of 🌧️ Open Weather and 🔎 Google Trends in Real Time 🏭 by candidate Wilber Jiménez Hernández')
     a = st.selectbox("Choose a Strategy Dashboard", ("Products", "Offers", "Communications"), index=None, placeholder="Choose an option")
-    if a == "Products":
-        st.title('Instacart Dasboard 🛒')
-        col1, col2, col3, col4 = st.columns(4)
-        col1.metric("Best Hour", "10:00", "20%")
-        col2.metric("Best Day", "Sunday", "33%")
-        col3.metric("Best Client", "ID 72.726", "25%")
-        col4.metric("Best Product", "ID 24.852", "17%")
-        current_time = time.ctime()
-        st.write("In real time monitoring at: ", current_time)
-        
-        st.header('Product Strategy 📦')
-        
-        colored_header(
-            label="Historic Data - Purchases",
-            description="By days and hot & cold trends",
-            color_name="violet-70",
-        )
+   
 
 
 
