@@ -18,6 +18,7 @@ import streamlit.components.v1 as com
 import sqlite3 as sq3
 import pandas.io.sql as pds
 from PIL import Image
+import seaborn as sns
 
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
 st.set_page_config(
@@ -56,6 +57,11 @@ with col5:
             description="By days and hot & cold trends",
             color_name="violet-70",
             )
+        sns.histplot(orders['order_hour_of_day'], bins=24, kde=True)
+        plt.title('Histogram of Orders by Hours')
+        plt.xlabel('Value')
+        plt.ylabel('Frequency')
+        plt.show()
                    
         
 with col6:
