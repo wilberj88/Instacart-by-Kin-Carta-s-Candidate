@@ -31,14 +31,11 @@ with st.sidebar:
     st.image(image, caption='Demo sourced by 🛒 Instacart DB and APIs of 🌧️ Open Weather and 🔎 Google Trends in Real Time 🏭 by candidate Wilber Jiménez Hernández')
   
 colA, colB = st.columns(2)
-colA.title('Instacart real time Dasboard 🛒')
+colA.title('Instacart real time Dashboard 🛒')
 colB.title(' Marketing Decission´s Team')
 
 colX, colY, colZ = st.columns(3)
-colY.header('Strategies 🗺️ & Tactics 🔫')
-colY.subheader('In real time monitoring at:')
-current_time = time.ctime()
-colY.write(current_time)
+colY.header('Historic Patters (circa 2012)')
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Best Hour", "10:00", "20%")
@@ -46,6 +43,11 @@ col2.metric("Best Day", "Sunday", "33%")
 col3.metric("Best Client", "ID 72.726", "25%")
 col4.metric("Best Product", "ID 24.852", "17%")
 
+colX, colY, colZ = st.columns(3)
+colY.header('Strategies 🗺️ & Tactics 🔫')
+colY.subheader('In real time monitoring at:')
+current_time = time.ctime()
+colY.write(current_time)
 
      
 col5, col6, col7 = st.columns(3)
