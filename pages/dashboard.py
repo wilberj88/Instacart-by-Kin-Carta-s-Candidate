@@ -82,7 +82,7 @@ with col5:
                 )
          
         df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
-        st.dataframe(df_orders['order_hour_of_day'],
+        st.dataframe(df_orders,
                      st.column_config.BarChartColumn(
                             "Sales by hours",
                             help="Circa 2012",
