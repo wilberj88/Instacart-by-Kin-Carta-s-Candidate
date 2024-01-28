@@ -31,7 +31,8 @@ with st.sidebar:
     st.image(image, caption='Demo sourced by 🛒 Instacart DB and APIs of 🌧️ Open Weather and 🔎 Google Trends in Real Time 🏭 by candidate Wilber Jiménez Hernández')
   
 
-st.title('Instacart Dasboard 🛒')
+st.title('Instacart real time Dasboard 🛒')
+st.header('Marketing Decission´s Team')
 current_time = time.ctime()
 st.write("In real time monitoring at: ", current_time)
 
