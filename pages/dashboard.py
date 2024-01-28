@@ -34,10 +34,11 @@ colA, colB = st.columns(2)
 colA.title('Instacart real time Dasboard 🛒')
 colB.title(' Marketing Decission´s Team')
 
-colC, colD = st.columns(2)
-colC.header('In real time monitoring at:')
+colX, colY, colZ = st.columns(3)
+colY.header('Strategies 🗺️ & Tactics 🔫')
+colY.subheader('In real time monitoring at:')
 current_time = time.ctime()
-colD.write(current_time)
+colY.write(current_time)
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Best Hour", "10:00", "20%")
@@ -45,8 +46,7 @@ col2.metric("Best Day", "Sunday", "33%")
 col3.metric("Best Client", "ID 72.726", "25%")
 col4.metric("Best Product", "ID 24.852", "17%")
 
-colX, colY, colZ = st.columns(3)
-colY.header('Strategies 🗺️ & Tactics 🔫')
+
      
 col5, col6, col7 = st.columns(3)
 with col5:
