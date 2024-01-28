@@ -81,9 +81,6 @@ with col5:
                     hide_index=True,
                 )
          
-        df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
-        st.bar_chart(df_orders, x="order_hour_of_day")
-
                    
         
 with col6:
@@ -94,6 +91,9 @@ with col6:
             color_name="violet-70",
             )
         
+        df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
+        st.bar_chart(df_orders, x="order_hour_of_day")
+
 with col7:
     with st.container(border=True):
         colored_header(
