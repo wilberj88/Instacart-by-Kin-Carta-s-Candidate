@@ -57,6 +57,31 @@ with col5:
             description="By days and hot & cold trends",
             color_name="violet-70",
             )
+        df_productos_mas_menos_pedidos = pd.DataFrame(
+                    {
+                        "Ranking": ["Top1 Sales", "Top2 Sales", "Top3 Sales"],
+                        "url": ["https://roadmap.streamlit.app", "https://extras.streamlit.app", "https://issues.streamlit.app"],
+                        "stars": ["5", "5", "5"],
+                        "views_history": [[random.randint(0, 5000) for _ in range(30)] for _ in range(3)],
+                    }
+                )
+         st.dataframe(
+                    df_productos_mas_menos_pedidos,
+                    column_config={
+                        "Ranking": "Servicios",
+                        "stars": st.column_config.NumberColumn(
+                            "Github Stars",
+                            help="Number of stars on GitHub",
+                            format="%d ⭐",
+                        ),
+                        "url": st.column_config.LinkColumn("Link App URL"),
+                        "views_history": st.column_config.LineChartColumn(
+                            "Ventas (past 30 days)", y_min=0, y_max=5000
+                        ),
+                    },
+                    hide_index=True,
+                )
+         
         df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
         st.dataframe(df_orders['order_hour_of_day'])
         
