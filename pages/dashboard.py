@@ -44,7 +44,10 @@ col4.metric("Best Product", "ID 24.852", "17%")
 
 col5, col6, col7 = st.columns(3)
 with col5:
-    st.header('Product Strategy 📦')
+     with st.form(key = 'params_form'):
+        st.header('Product Strategy 📦')
+        st.markdown(f'<p class="params_text">FILTERS', unsafe_allow_html = True)
+        
 with col6:
     st.header('Offers Strategy 🏷️')
 with col7:
