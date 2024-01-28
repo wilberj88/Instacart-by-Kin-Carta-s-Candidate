@@ -26,7 +26,7 @@ st.set_page_config(
 
 with st.sidebar:
     image = Image.open('KinCartalogo.png')
-    st.image(image, caption='Demo in Real Time 🏭 by Wilber Jiménez Hernández')
+    st.image(image, caption='Demo in Real Time 🏭                        by Wilber Jiménez Hernández')
 
 
 
