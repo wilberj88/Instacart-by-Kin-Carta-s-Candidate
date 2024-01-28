@@ -57,11 +57,10 @@ with col5:
             description="By days and hot & cold trends",
             color_name="violet-70",
             )
-        sns.histplot(orders['order_hour_of_day'], bins=24, kde=True)
-        plt.title('Histogram of Orders by Hours')
-        plt.xlabel('Value')
-        plt.ylabel('Frequency')
-        plt.show()
+        df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
+        st.dataframe(df_orders['order_hour_of_day'])
+        
+       
                    
         
 with col6:
