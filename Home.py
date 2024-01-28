@@ -26,7 +26,7 @@ st.set_page_config(
 
 with st.sidebar:
     image = Image.open('KinCartalogo.png')
-    st.image(image, caption='Demo in Real Time 🏭 by candidate Wilber Jiménez Hernández')
+    st.image(image, caption='Demo sourced by 🛒 Instacart DB and APIs of 🌧️ Open Weather and 🔎 Google Trends in Real Time 🏭 by candidate Wilber Jiménez Hernández')
     st.selectbox("Choose a Strategy Dashboard", ("Products", "Offers", "Communications"), index=None, placeholder="Choose an option")
 
 
