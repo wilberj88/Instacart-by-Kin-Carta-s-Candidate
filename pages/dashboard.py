@@ -35,7 +35,7 @@ colA.title('Instacart real time Dashboard 🛒')
 colB.title(' Marketing Decission´s Team')
 
 colX, colY, colZ = st.columns(3)
-colY.header('Historical Patterns (circa 2012)')
+colY.header('Key Performance Indicators')
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Best Hour", "10:00", "20%")
@@ -51,9 +51,9 @@ colY.header('Strategies 🗺️ & Tactics 🔫')
 col5, col6, col7 = st.columns(3)
 with col5:
      with st.container(border=True):
-        st.header('Product 📦')
+        st.header('Products 📦')
         colored_header(
-        label="Historic Data - Purchases",
+        label="Historical Data - Purchases",
         description="By days and hot & cold trends",
         color_name="violet-70",
         )
@@ -62,7 +62,7 @@ with col5:
 with col6:
     st.header('Offers 🏷️')
 with col7:
-    st.header('Communications📢')
+    st.header('Communications 📢')
 
 
 
