@@ -17,6 +17,7 @@ from streamlit_extras.colored_header import colored_header
 import streamlit.components.v1 as com
 import sqlite3 as sq3
 import pandas.io.sql as pds
+from PIL import Image
 
 with st.sidebar:
     image = Image.open('KinCartalogo.png')
