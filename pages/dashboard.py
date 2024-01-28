@@ -82,7 +82,7 @@ with col5:
                 )
          
         df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
-        st.bar_chart(df_orders, x="order_hour_of_day", y="frecuency")
+        st.bar_chart(df_orders, x="order_hour_of_day")
 
                    
         
