@@ -42,12 +42,12 @@ col2.metric("Best Day", "Sunday", "33%")
 col3.metric("Best Client", "ID 72.726", "25%")
 col4.metric("Best Product", "ID 24.852", "17%")
 
-with st.container(border=True, height=80):
+with st.container(border=True, height=50):
         st.header('Strategies 🗺️ & Tactics 🔫')
      
 col5, col6, col7 = st.columns(3)
 with col5:
-     with st.form(key = 'params_form'):
+     with st.container(border=True, height=80)::
         st.header('Product Strategy 📦')
        
         
