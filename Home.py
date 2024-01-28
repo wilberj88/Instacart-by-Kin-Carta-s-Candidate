@@ -18,6 +18,11 @@ import streamlit.components.v1 as com
 import sqlite3 as sq3
 import pandas.io.sql as pds
 
+with st.sidebar:
+    image = Image.open('KinCartalogo.png')
+    st.image(image, caption='Demo Novus Mando: Monitor en Tiempo Real de Productividad Actual Vs Histórica. Alarmas y Recomendaciones para Planta Zamora 🏭')
+
+
 
 if "symbols_list" not in st.session_state:
     st.session_state.symbols_list = None
