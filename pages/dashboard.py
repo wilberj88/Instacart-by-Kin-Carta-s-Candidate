@@ -31,10 +31,10 @@ with st.sidebar:
     st.image(image, caption='Demo sourced by 🛒 Instacart DB and APIs of 🌧️ Open Weather and 🔎 Google Trends in Real Time 🏭 by candidate Wilber Jiménez Hernández')
   
 
-st.title('Instacart real time Dasboard 🛒')
-st.header('Marketing Decission´s Team')
+st.title('Instacart real time Dasboard 🛒 Marketing Decission´s Team')
+st.header('In real time monitoring at:')
 current_time = time.ctime()
-st.write("In real time monitoring at: ", current_time)
+st.write(current_time)
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Best Hour", "10:00", "20%")
