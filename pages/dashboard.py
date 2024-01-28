@@ -19,17 +19,17 @@ import sqlite3 as sq3
 import pandas.io.sql as pds
 from PIL import Image
 
+# SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
 st.set_page_config(
     layout = 'wide',
-    page_title = '🛒 Instacart Dashboard Demo'
+    page_title = 'Instacart Dashboard Demo by Wilber Jimenez',
+    page_icon="🛒"
 )
 
 with st.sidebar:
     image = Image.open('KinCartalogo.png')
     st.image(image, caption='Demo sourced by 🛒 Instacart DB and APIs of 🌧️ Open Weather and 🔎 Google Trends in Real Time 🏭 by candidate Wilber Jiménez Hernández')
   
-# SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
-st.set_page_config(layout="wide", page_title="Instacart Dasboard", page_icon="🛒")
 
 st.title('Instacart Dasboard 🛒')
 current_time = time.ctime()
