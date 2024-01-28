@@ -34,10 +34,22 @@ with st.sidebar:
 st.title('Instacart real time Dasboard 🛒')
 st.header('Marketing Decission´s Team')
 current_time = time.ctime()
-st.markdown('<div style="text-align: center;">In real time monitoring at: {current_time}</div>', unsafe_allow_html=True) 
 st.write("In real time monitoring at: ", current_time)
 
-st.header('Product Strategy 📦')
+col1, col2, col3, col4 = st.columns(4)
+col1.metric("Best Hour", "10:00", "20%")
+col2.metric("Best Day", "Sunday", "33%")
+col3.metric("Best Client", "ID 72.726", "25%")
+col4.metric("Best Product", "ID 24.852", "17%")
+
+col5, col6, col7 = st.columns(3)
+with col5:
+    st.header('Product Strategy 📦')
+with col6:
+    st.header('Offers Strategy 🏷️')
+with col7:
+    st.header('Communications Strategy 📢')
+
 
 colored_header(
     label="Historic Data - Purchases",
@@ -45,8 +57,4 @@ colored_header(
     color_name="violet-70",
 )
 
-col1, col2, col3, col4 = st.columns(4)
-col1.metric("Best Hour", "10:00", "20%")
-col2.metric("Best Day", "Sunday", "33%")
-col3.metric("Best Client", "ID 72.726", "25%")
-col4.metric("Best Product", "ID 24.852", "17%")
+
