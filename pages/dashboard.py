@@ -32,10 +32,9 @@ with st.sidebar:
   
 
 st.title('Instacart real time Dasboard 🛒')
-st.markdown('<div style="text-align: center;">Hello World!</div>', unsafe_allow_html=True) 
-st.markdown('<div style="text-align: left;">Hello World!</div>', unsafe_allow_html=True)
 st.header('Marketing Decission´s Team')
 current_time = time.ctime()
+st.markdown('<div style="text-align: center;">In real time monitoring at: {current_time}</div>', unsafe_allow_html=True) 
 st.write("In real time monitoring at: ", current_time)
 
 st.header('Product Strategy 📦')
