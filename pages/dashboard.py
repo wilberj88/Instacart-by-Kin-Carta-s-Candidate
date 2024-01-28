@@ -32,7 +32,7 @@ with st.sidebar:
   
 
 st.title('Instacart real time Dasboard 🛒')
-st st.markdown('<div style="text-align: center;">Hello World!</div>', unsafe_allow_html=True) 
+st.markdown('<div style="text-align: center;">Hello World!</div>', unsafe_allow_html=True) 
 st.markdown('<div style="text-align: left;">Hello World!</div>', unsafe_allow_html=True)
 st.header('Marketing Decission´s Team')
 current_time = time.ctime()
