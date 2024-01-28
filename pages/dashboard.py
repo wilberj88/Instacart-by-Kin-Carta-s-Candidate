@@ -47,7 +47,7 @@ with st.container(border=True, height=50):
      
 col5, col6, col7 = st.columns(3)
 with col5:
-     with st.container(border=True, height=80)::
+     with st.container(border=True, height=80):
         st.header('Product Strategy 📦')
        
         
