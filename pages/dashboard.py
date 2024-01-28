@@ -30,11 +30,14 @@ with st.sidebar:
     image = Image.open('KinCartalogo.png')
     st.image(image, caption='Demo sourced by 🛒 Instacart DB and APIs of 🌧️ Open Weather and 🔎 Google Trends in Real Time 🏭 by candidate Wilber Jiménez Hernández')
   
+colA, colB = st.columns(2)
+colA.title('Instacart real time Dasboard 🛒')
+colB.title(' Marketing Decission´s Team')
 
-st.title('Instacart real time Dasboard 🛒 Marketing Decission´s Team')
-st.header('In real time monitoring at:')
+colC, colD = st.columns(2)
+colC.header('In real time monitoring at:')
 current_time = time.ctime()
-st.write(current_time)
+colD.write(current_time)
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Best Hour", "10:00", "20%")
