@@ -116,11 +116,86 @@ with col7:
             description="By Trends",
             color_name="violet-70",
             )
-        pytrends = TrendReq(hl='en-US', tz=360)
-        st.write("🇺🇸 USA Top10 Trending Search in last hour")
-          # Google Trends data
-        df1 = pytrends.trending_searches(pn='united_states')
-        st.dataframe(df1.head(10))
+        cola, colb = st.columns(2)
+        with cola:
+            pytrends = TrendReq(hl='en-US', tz=360)
+            st.write("🇺🇸 USA Top10 Trending Search in last hour")
+              # Google Trends data
+            df1 = pytrends.trending_searches(pn='united_states')
+            st.dataframe(df1.head(10))
+        with colb:
+            #ALARMS CONFIGURATION
+            BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
+            API_KEY = "146090ad17fa8843bc9eca97c53926b4"
+            sity1 = "New York"
+            sity2 = "San Francisco"
+            sity3 = "Huston"
+            
+            URL1 = BASE_URL + "q=" + sity1 + "&appid=" + API_KEY
+            URL2 = BASE_URL + "q=" + sity2 + "&appid=" + API_KEY
+            URL3 = BASE_URL + "q=" + sity3 + "&appid=" + API_KEY
+      
+
+
+            response1 = requests.get(URL1)
+            response2 = requests.get(URL2)
+            response3 = requests.get(URL3)
+            
+
+            if response1.status_code == 200:
+               # getting data in the json format
+               data1 = response1.json()
+               # getting the main dict block
+               main1 = data1['main']
+              # getting temperature
+               temperature1 = main1['temp']
+               # getting the humidity
+               humidity1 = main1['humidity']
+               # getting the pressure
+               pressure1 = main1['pressure']
+               # weather report
+               report1 = data1['weather']
+            
+            if response2.status_code == 200:
+               # getting data in the json format
+               data2 = response2.json()
+               # getting the main dict block
+               main2 = data2['main']
+              # getting temperature
+               temperature2 = main2['temp']
+               # getting the humidity
+               humidity2 = main2['humidity']
+               # getting the pressure
+               pressure2 = main2['pressure']
+               # weather report
+               report2 = data2['weather']
+            
+            if response3.status_code == 200:
+               # getting data in the json format
+               data3 = response3.json()
+               # getting the main dict block
+               main3 = data3['main']
+              # getting temperature
+               temperature3 = main3['temp']
+               # getting the humidity
+               humidity3 = main3['humidity']
+               # getting the pressure
+               pressure3 = main3['pressure']
+               # weather report
+               report3 = data3['weather']
+
+
+                st.write("🌧 USA ☀️")
+                st.write(f"{sity1:-^30}")
+                st.write(f"Temperature (Kelvins): {temperature1}")
+                st.write(f"Humidity: {humidity1}")
+                st.write(f"Pressure: {pressure1}")
+                st.write(f"Weather Report: {report1[0]['description']}")
+                st.write(f"{sity2:-^30}")
+                st.write(f"Temperature (Kelvins): {temperature2}")
+                st.write(f"Humidity: {humidity2}")
+                st.write(f"Pressure: {pressure2}")
+                st.write(f"Weather Report: {report2[0]['description']}")
 
 
 
