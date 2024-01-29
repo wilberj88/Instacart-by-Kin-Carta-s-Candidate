@@ -27,7 +27,7 @@ colored_header(
 )
 
 
-a = st.selectbox("Choose a Module", ("Days", "Products", "Hours"), index=None, placeholder="Choose an option")
+a = st.selectbox("Choose a module", ("All", "Days", "Products", "Hours"), index=None, placeholder="Select one")
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Best Hour", "10:00", "20%")
@@ -51,11 +51,11 @@ col5, col6, col7 = st.columns(3)
 with col5:
     
     meta = 35000
-    st.subheader("Supervivencia Vs Promedio")
+    st.subheader("Sales Yesterday Vs Today")
     option = {
     "xAxis": {
         "type": "category",
-        "data": ["Hora_1", "Hora_2", "Hora_3", "Hora_4", "Hora_5", "Hora_6", "Hora_7"],
+        "data": ["Hour_7", "Hour_8", "Hour_9", "Hour_10", "Hour_11", "Hour_12", "Hour_13"],
     },
     "yAxis": {"type": "value"},
     "series": [
@@ -64,11 +64,11 @@ with col5:
     ],
     }
     st_echarts(
-        options=option, height="625px",
+        options=option, height="300px",
     )
 with col6:
-    
-    st.subheader("Empleos")
+    st.subheader("Sales Today")
+    col6a, col6b = st.columns(2)
     acelerometro2 = {
         "tooltip": {"formatter": "{a} <br/>{b} : {c}%"},
         "series": [
@@ -82,11 +82,11 @@ with col6:
                 },
                 "progress": {"show": "true", "width": 10},
                 "detail": {"valueAnimation": "true", "formatter": "{value}"},
-                "data": [{"value": 50, "name": "Directos"}],
+                "data": [{"value": 50, "name": "Hour Goal"}],
             }
         ],
     }
-    st_echarts(options=acelerometro2)
+    col6a.st_echarts(options=acelerometro2)
     acelerometro1 = {
         "tooltip": {"formatter": "{a} <br/>{b} : {c}%"},
         "series": [
@@ -100,12 +100,12 @@ with col6:
                 },
                 "progress": {"show": "true", "width": 10},
                 "detail": {"valueAnimation": "true", "formatter": "{value}"},
-                "data": [{"value": 30, "name": "Indirectos"}],
+                "data": [{"value": 30, "name": "Day Goal"}],
             }
         ],
     }
 
-    st_echarts(options=acelerometro1)
+    col6b.st_echarts(options=acelerometro1)
      
 with col7:
     st.subheader("Tributación Sectorial")
