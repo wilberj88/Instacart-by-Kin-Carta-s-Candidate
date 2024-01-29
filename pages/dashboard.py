@@ -66,6 +66,7 @@ with col5:
      with st.container(border=True):
         colored_header(
             label="Products 📦",
+            description="By ID",
             color_name="violet-70",
             )
         df_productos_mas_menos_pedidos = pd.DataFrame(
