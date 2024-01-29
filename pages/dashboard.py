@@ -184,18 +184,17 @@ with col7:
                # weather report
                report3 = data3['weather']
 
-
-                st.write("🌧 USA ☀️")
-                st.write(f"{sity1:-^30}")
-                st.write(f"Temperature (Kelvins): {temperature1}")
-                st.write(f"Humidity: {humidity1}")
-                st.write(f"Pressure: {pressure1}")
-                st.write(f"Weather Report: {report1[0]['description']}")
-                st.write(f"{sity2:-^30}")
-                st.write(f"Temperature (Kelvins): {temperature2}")
-                st.write(f"Humidity: {humidity2}")
-                st.write(f"Pressure: {pressure2}")
-                st.write(f"Weather Report: {report2[0]['description']}")
+            st.write("🌧 USA ☀️")
+            st.write(f"{sity1:-^30}")
+            st.write(f"Temperature (Kelvins): {temperature1}")
+            st.write(f"Humidity: {humidity1}")
+            st.write(f"Pressure: {pressure1}")
+            st.write(f"Weather Report: {report1[0]['description']}")
+            st.write(f"{sity2:-^30}")
+            st.write(f"Temperature (Kelvins): {temperature2}")
+            st.write(f"Humidity: {humidity2}")
+            st.write(f"Pressure: {pressure2}")
+            st.write(f"Weather Report: {report2[0]['description']}")
 
 
 
