@@ -78,7 +78,7 @@ with col5:
         options=option, height="300px",
     )
 with col6:
-    st.subheader("Sales Today: by currently hour and all day")
+    st.subheader("Goal Sales Today: by currently hour and whole day")
     col6a, col6b = st.columns(2)
     with col6a:
         acelerometro2 = {
@@ -94,7 +94,7 @@ with col6:
                     },
                     "progress": {"show": "true", "width": 10},
                     "detail": {"valueAnimation": "true", "formatter": "{value}"},
-                    "data": [{"value": 50, "name": "Hour's Goal"}],
+                    "data": [{"value": 50, "name": "By Hour"}],
                 }
             ],
         }
@@ -113,7 +113,7 @@ with col6:
                     },
                     "progress": {"show": "true", "width": 10},
                     "detail": {"valueAnimation": "true", "formatter": "{value}"},
-                    "data": [{"value": 30, "name": "Day's Goal"}],
+                    "data": [{"value": 30, "name": "By Day"}],
                 }
             ],
         }
