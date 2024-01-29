@@ -15,7 +15,7 @@ import seaborn as sns
 st.set_page_config(layout="wide", page_title="Instacart Dasboard", page_icon="🛒")
 
 with st.sidebar:
-    image = Image.open('Instacart-by-Kin-Carta-s-Candidate/KinCartalogo.png')
+    image = Image.open('data/KinCartalogo.png')
     st.image(image, caption='Demo sourced by 🛒 Instacart DB and APIs of 🌧️ Open Weather and 🔎 Google Trends in Real Time 🏭 by candidate Wilber Jiménez Hernández')
     a = st.selectbox("Choose a Strategy Dashboard", ("Products", "Offers", "Communications"), index=None, placeholder="Choose an option")
    
