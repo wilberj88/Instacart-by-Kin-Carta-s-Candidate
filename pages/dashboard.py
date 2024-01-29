@@ -181,7 +181,7 @@ with col6:
             description="By States",
             color_name="violet-70",
             )
-        
+        st.selectbox("Choose a focus for the strategy", ('Best Products', 'Worst Products', 'Best Hours', 'Worst Hours'))
         #df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
         #st.bar_chart(df_orders, x="order_hour_of_day")
 
@@ -192,24 +192,10 @@ with col7:
             description="By Trends",
             color_name="violet-70",
             )
-        cola, colb = st.columns(2)
-        with cola:
-            pytrends = TrendReq(hl='en-US', tz=360)
-            st.write("🇺🇸 USA Top10 Trending Search in last hour")
-              # Google Trends data
-            df1 = pytrends.trending_searches(pn='united_states')
-            st.dataframe(df1.head(10))
-        with colb:
-            
-
-            st.write("🌧 USA ☀️")
+        st.selectbox(
+            'Wich channel do you prefer?',
+            ('Email', 'Home phone', 'Mobile phone'))
+             
            
            
 
-
-
-
-
-st.subheader('In real time monitoring at:')
-current_time = time.ctime()
-st.write(current_time)
