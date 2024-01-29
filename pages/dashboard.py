@@ -136,7 +136,7 @@ with col8:
 
 colXX, colYY, colZZ = st.columns(3)
 with colYY:
-    st.header('Strategies 🗺️ & Tactics 🔫')
+    st.header('Personalize Strategies 🗺️ & Tactics 🔫')
  
 
      
