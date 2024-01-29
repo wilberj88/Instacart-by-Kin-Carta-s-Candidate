@@ -31,24 +31,38 @@ with st.sidebar:
    
 
 
-
+def make_choropleth(input_df, input_id, input_column, input_color_theme):
+    choropleth = px.choropleth(input_df, locations=input_id, color=input_column, locationmode="USA-states",
+                               color_continuous_scale=input_color_theme,
+                               range_color=(0, max(df_selected_year.population)),
+                               scope="usa",
+                               labels={'population':'Population'}
+                              )
+    choropleth.update_layout(
+        template='plotly_dark',
+        plot_bgcolor='rgba(0, 0, 0, 0)',
+        paper_bgcolor='rgba(0, 0, 0, 0)',
+        margin=dict(l=0, r=0, t=0, b=0),
+        height=350
+    )
+    return choropleth
 
 if "symbols_list" not in st.session_state:
     st.session_state.symbols_list = None
     
 
 
-df_departments = pd.read_csv("data/Deparments.csv", index_col=0)
-st.write(df_departments)
+#df_departments = pd.read_csv("data/Deparments.csv", index_col=0)
+#st.write(df_departments)
 
-df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
-st.write(df_orders)
+#df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
+#st.write(df_orders)
 
-df_aisles =  pd.read_csv("data/Aisles.csv", index_col=0)
-st.write(df_aisles)
+#df_aisles =  pd.read_csv("data/Aisles.csv", index_col=0)
+#st.write(df_aisles)
 
-df_products =  pd.read_csv("data/Products.csv", index_col=0)
-st.write(df_products)
+#df_products =  pd.read_csv("data/Products.csv", index_col=0)
+#st.write(df_products)
 
 
 st.markdown(
@@ -100,15 +114,13 @@ with params_col:
         
         st.markdown(f'<p class="params_text">FILTERS', unsafe_allow_html = True)
                 
-        tipo_empresa = st.selectbox("Selecciona tipo de empresa:", ("S.L.", "S.A.", "S.L.L.", "Holding", "Comunidades de bienes", "Cooperativas", "Asociaciones", "Autónomos", "Emprendedores", "Particulares"), index=None, placeholder="Choose an option")
-        
-        servicios_contables_internacionales = st.selectbox("Selecciona tipo de servicio contable internacional:", ("Reporting", "Estados Financieros", "Informes Casa Matriz", "Auditorías de Control Interno"), index=None, placeholder="Choose an option")
-        
-        servicios_contables_outsourcing_gerencial = st.selectbox("Selecciona tipo de servicio contable outsourging gerencial necesitas:", ("Asistencia a Justa de Socios", "Análisis de Estados Financieros", "Atención Entidades Bancarias", "Estrategia Corporativa"), index=None, placeholder="Choose an option")
+        tipo_empresa = st.selectbox("Select a day of the week", ("S.L.", "S.A.", "S.L.L.", "Holding", "Comunidades de bienes", "Cooperativas", "Asociaciones", "Autónomos", "Emprendedores", "Particulares"), index=None, placeholder="Choose an option")
+                
+        servicios_contables_outsourcing_gerencial = st.selectbox("Select an hour:", ("Asistencia a Justa de Socios", "Análisis de Estados Financieros", "Atención Entidades Bancarias", "Estrategia Corporativa"), index=None, placeholder="Choose an option")
 
-        a = st.slider("Indica nivel mínimo de facturación anual", 0, 100000, 5000)
+        a = st.slider("Select a level of loyalty", 0, 100000, 5000)
         st.divider()
-        update_chart = st.form_submit_button('Update chart')
+        update_chart = st.form_submit_button('Analyze to Prepair Strategy')
         
         if update_chart:
            
@@ -116,28 +128,26 @@ with params_col:
             with chart_col:
 
                 with st.container(border=True):
-                    fig1 = go.Figure(data=[go.Sankey(
-                            node = dict(
-                                pad = 15,
-                                thickness = 20,
-                                line = dict(color = "black", width = 0.5),
-                                label = ["Gastos Mensuales", "Necesidades", "Entretenimiento", "Inversiones", "Vivienda", "Estudio", "Alimentación", "Transporte", "Entretenimiento", "Viajes", "Acciones", "Activos", "Criptomonedas", "Bonos"],
-                                color = "red"
-                                ),
-                            link = dict(
-                            source = [0, 0, 0, 1, 1, 1, 1, 2, 2, 3, 3, 3, 3], # indices correspond to labels, eg A1, A2, A1, B1, ...
-                            target = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
-                            value = [50, 20, 30, 10, 20, 10, 22, 22, 10, 14, 10, 10, 10]
-                            ))])
-                        
-                    fig1.update_layout(title_text="Usos promedio de tu presupuesto💰", font_size=12)
-                    st.plotly_chart(fig1, theme="streamlit")
+                   #######################
+                    # Load data
+                    df_reshaped = pd.read_csv('data/us-population-2010-2019-reshaped.csv')
+                    # USER SELECTION
+                    year_list = list(df_reshaped.year.unique())[::-1]    
+                    selected_year = st.selectbox('Select a year', year_list)
+                    df_selected_year = df_reshaped[df_reshaped.year == selected_year]
+                    df_selected_year_sorted = df_selected_year.sort_values(by="population", ascending=False)
+                    
+                    color_theme_list = ['blues', 'cividis', 'greens', 'inferno', 'magma', 'plasma', 'reds', 'rainbow', 'turbo', 'viridis']
+                    selected_color_theme = st.selectbox('Select a color theme', color_theme_list)
+                    choropleth = make_choropleth(df_selected_year, 'states_code', 'population', selected_color_theme)
+                    st.plotly_chart(choropleth, use_container_width=True)
 
-                                        
+
+                    
                     my_grid2 = grid(3, vertical_align="bottom")
-                    my_grid2.button("Ranking Mejores Clientes", use_container_width=True)
-                    my_grid2.button("Ranking Mejores Proveedores", use_container_width=True)
-                    my_grid2.button("Ranking Peores Deudores", use_container_width=True)
+                    my_grid2.button("Ranking Best Clientss", use_container_width=True)
+                    my_grid2.button("Ranking Best Hours", use_container_width=True)
+                    my_grid2.button("Ranking Best Places", use_container_width=True)
 
                     st.markdown('<p class="dashboard_title">🌎 🔎</p>', unsafe_allow_html = True)
                     com.html("""
