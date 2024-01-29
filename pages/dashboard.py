@@ -47,19 +47,34 @@ with st.sidebar:
         st.subheader("PDF explanation")
   
 colA, colB = st.columns(2)
-colA.title('Instacart real time Dashboard 🛒')
+colA.title('Instacart Dashboard 🛒')
 colB.title(' Marketing Decission´s Team 🎯')
 
 colX, colY, colZ = st.columns(3)
-colY.header('Key Performance Indicators')
+colY.header('Market Monitoring in real time')
 
-col1, col2, col3, col4 = st.columns(4)
-col1.metric("Best Hour", "10:00", "20%")
-col2.metric("Best Day", "Sunday", "33%")
-col3.metric("Best Client", "ID 72.726", "25%")
-col4.metric("Best Product", "ID 24.852", "17%")
+pytrends = TrendReq(hl='en-US', tz=360)
+col4, col5, col6 = st.columns(3)
+with col4:
+    st.write("🇺🇸 USA Top10 Trending Search in last hour")
+      # Google Trends data
+    df1 = pytrends.trending_searches(pn='united_states')
+    st.dataframe(df1.head(10))
+with col5:
+    st.write("🇬🇧 UK Top10 Trending Search in last hour")
+      # Google Trends data
+    df2 = pytrends.trending_searches(pn='united_kingdom')
+    st.dataframe(df2.head(10))
+with col6:
+    st.write("🇨🇴 COL Top10 Trending Search in last hour")
+    df3 = pytrends.trending_searches(pn='colombia')
+    st.dataframe(df3.head(10))
 
-colX, colY, colZ = st.columns(3)
+
+
+
+
+
 colY.header('Strategies 🗺️ & Tactics 🔫')
 
 
