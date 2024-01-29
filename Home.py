@@ -129,7 +129,8 @@ with params_col:
             with chart_col:
 
                 with st.container(border=True):
-                   #######################
+                   st.header("Principal Oportunities by 🇺🇸 States")
+                    #######################
                     # Load data
                     df_reshaped = pd.read_csv('data/us-population-2010-2019-reshaped (1).csv')
                     # USER SELECTION
@@ -158,21 +159,21 @@ with params_col:
                        
                     
             with data_col:
-                st.header('Recomendaciones de acciòn YA')
+                st.header('Recommendations for right now:')
                 current_time = ts.ctime()
                 st.write("In real time monitoring at: ", current_time)
-                st.write('EN TODA ESPAÑA')
+                st.write('In all the 🇺🇸 USA States:')
 
                 col1, col2 = st.columns(2)
                 with col1:
                     st.subheader('Plan A')
-                    st.write('Decir en Galicia que con este clima es mejor vivir asegurado')
+                    st.write('Use weather + trend + sale button')
                 with col2:
                     st.subheader('Plan B')
-                    st.write('Decir en Galicia que con este clima es mejor vivir con abogado')
+                    st.write('Use weather + sale button')
                 df = pd.DataFrame(
                     {
-                        "name": ["Contable", "Financiero", "Fiscal"],
+                        "name": ["Last Campaing", "Best Campaing", "Worst Campaing"],
                         "url": ["https://roadmap.streamlit.app", "https://extras.streamlit.app", "https://issues.streamlit.app"],
                         "stars": [random.randint(0, 1000) for _ in range(3)],
                         "views_history": [[random.randint(0, 5000) for _ in range(30)] for _ in range(3)],
@@ -181,7 +182,7 @@ with params_col:
                 st.dataframe(
                     df,
                     column_config={
-                        "name": "Servicios",
+                        "name": "References",
                         "stars": st.column_config.NumberColumn(
                             "Github Stars",
                             help="Number of stars on GitHub",
@@ -194,13 +195,13 @@ with params_col:
                     },
                     hide_index=True,
                 )
-                a = st.button('PREDICCIÓN DE DESEMPEÑO EN ENGAGEMENT')
+                a = st.button('PREDICT BEST ENGAGEMENT')
              
                 st.write('Plan A: 5%; Plan B: 4,5%')
             
                 data_df = pd.DataFrame(
                     {
-                        "name": ["Laboral", "Legal", "Mercantil"],
+                        "name": ["Facebook", "Instagram", "Youtube"],
                         "apps": [
                             "https://storage.googleapis.com/s4a-prod-share-preview/default/st_app_screenshot_image/5435b8cb-6c6c-490b-9608-799b543655d3/Home_Page.png",
                             "https://storage.googleapis.com/s4a-prod-share-preview/default/st_app_screenshot_image/ef9a7627-13f2-47e5-8f65-3f69bb38a5c2/Home_Page.png",
@@ -238,10 +239,10 @@ with params_col:
                     hide_index=True,
                 )
                 col1, col2, col3, col4 = st.columns(4)
-                col1.metric("Ingresos", "70%", "40%")
-                col2.metric("Gastos", "30%", "-82%")
-                col3.metric("Rentabilidad", "16%", "43%")
-                col4.metric("Rotación Personal", "87%", "78%")
+                col1.metric("Sunday", "70%", "40%")
+                col2.metric("Monday", "30%", "-82%")
+                col3.metric("Wednesday", "16%", "43%")
+                col4.metric("Tuesday", "87%", "78%")
                    
                 st.caption("By Wilber Jimenez Hernandez")
             
