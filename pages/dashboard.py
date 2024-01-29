@@ -122,7 +122,7 @@ with col7:
     df3 = pytrends.trending_searches(pn='colombia')
     st.dataframe(df3.head(10))
 with col8:
-    st.write("🇨🇴 MEX Top10 Trending Search in last hour")
+    st.write("🇲🇽 MEX Top10 Trending Search in last hour")
     df4 = pytrends.trending_searches(pn='mexico')
     st.dataframe(df4.head(10))
 
