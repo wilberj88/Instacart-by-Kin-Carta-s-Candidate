@@ -86,7 +86,7 @@ with col5:
                             format="%d ⭐",
                         ),
                         "views_history": st.column_config.LineChartColumn(
-                            "Ventas (past 30 days)", y_min=0, y_max=5000
+                            "Sales (past 30 days)", y_min=0, y_max=5000
                         ),
                     },
                     hide_index=True,
@@ -98,7 +98,7 @@ with col6:
     with st.container(border=True):
         colored_header(
             label="Offers 🏷️",
-            description="By days and hot & cold trends",
+            description="By States",
             color_name="violet-70",
             )
         
@@ -109,7 +109,7 @@ with col7:
     with st.container(border=True):
         colored_header(
             label="Communications 📢",
-            description="By days and hot & cold trends",
+            description="By Trends",
             color_name="violet-70",
             )
 
