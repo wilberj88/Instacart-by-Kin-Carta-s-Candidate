@@ -14,6 +14,12 @@ import seaborn as sns
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
 st.set_page_config(layout="wide", page_title="Instacart Dasboard", page_icon="🛒")
 
+with st.sidebar:
+    image = Image.open('KinCartalogo.png')
+    st.image(image, caption='Demo sourced by 🛒 Instacart DB and APIs of 🌧️ Open Weather and 🔎 Google Trends in Real Time 🏭 by candidate Wilber Jiménez Hernández')
+    a = st.selectbox("Choose a Strategy Dashboard", ("Products", "Offers", "Communications"), index=None, placeholder="Choose an option")
+   
+
 st.title('Instacart Dasboard 🛒')
 current_time = time.ctime()
 st.write("In real time monitoring at: ", current_time)
