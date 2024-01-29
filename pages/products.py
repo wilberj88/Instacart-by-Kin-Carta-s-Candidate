@@ -29,7 +29,7 @@ st.title('Instacart Dasboard 🛒')
 current_time = time.ctime()
 st.write("In real time monitoring at: ", current_time)
 
-st.header('Product Strategy 📦: when, who & what')
+st.header('Product Strategy 📦 - Bests performances when, who & what')
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Best Hour", "10:00", "20%")
 col2.metric("Best Day", "Sunday", "33%")
