@@ -117,12 +117,10 @@ with col7:
             color_name="violet-70",
             )
         pytrends = TrendReq(hl='en-US', tz=360)
-        col4, col5, col6 = st.columns(3)
-        with col4:
-            st.write("🇺🇸 USA Top10 Trending Search in last hour")
-              # Google Trends data
-            df1 = pytrends.trending_searches(pn='united_states')
-            st.dataframe(df1.head(10))
+        st.write("🇺🇸 USA Top10 Trending Search in last hour")
+          # Google Trends data
+        df1 = pytrends.trending_searches(pn='united_states')
+        st.dataframe(df1.head(10))
 
 
 
