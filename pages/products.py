@@ -78,7 +78,7 @@ with col5:
         options=option, height="300px",
     )
 with col6:
-    st.subheader("Goal Sales Today: by currently hour and whole day")
+    st.subheader("Goal Sales Today")
     col6a, col6b = st.columns(2)
     with col6a:
         acelerometro2 = {
