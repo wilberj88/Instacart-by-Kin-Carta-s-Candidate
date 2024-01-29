@@ -67,7 +67,7 @@ with col5:
         options=option, height="300px",
     )
 with col6:
-    st.subheader("Sales Today")
+    st.subheader("Sales Today: by currently hour and all day")
     col6a, col6b = st.columns(2)
     with col6a:
         acelerometro2 = {
@@ -83,7 +83,7 @@ with col6:
                     },
                     "progress": {"show": "true", "width": 10},
                     "detail": {"valueAnimation": "true", "formatter": "{value}"},
-                    "data": [{"value": 50, "name": "Hour Goal"}],
+                    "data": [{"value": 50, "name": "Hour's Goal"}],
                 }
             ],
         }
@@ -102,7 +102,7 @@ with col6:
                     },
                     "progress": {"show": "true", "width": 10},
                     "detail": {"valueAnimation": "true", "formatter": "{value}"},
-                    "data": [{"value": 30, "name": "Day Goal"}],
+                    "data": [{"value": 30, "name": "Day's Goal"}],
                 }
             ],
         }
@@ -110,14 +110,14 @@ with col6:
         st_echarts(options=acelerometro1)
      
 with col7:
-    st.subheader("Tributación Sectorial")
+    st.subheader("Sales by days last week")
     options = {
             "title": {"text": "🧱"},
             "tooltip": {
                 "trigger": "axis",
                 "axisPointer": {"type": "cross", "label": {"backgroundColor": "#6a7985"}},
             },
-            "legend": {"data": ["Agro", "Manufacturas", "Industrial", "Servicios", "Tech"]},
+            "legend": {"data": ["Thursday", "Wednesday", "Tuesday", "Monday", "Sunday"]},
             "toolbox": {"feature": {"saveAsImage": {}}},
             "grid": {"left": "3%", "right": "4%", "bottom": "3%", "containLabel": True},
             "xAxis": [
@@ -130,7 +130,7 @@ with col7:
             "yAxis": [{"type": "value"}],
             "series": [
                 {
-                    "name": "Agro",
+                    "name": "Thursday",
                     "type": "line",
                     "stack": "总量",
                     "areaStyle": {},
@@ -138,7 +138,7 @@ with col7:
                     "data": [meta_zona_5*0.1, meta_zona_5*0.2, meta_zona_5*0.35, meta_zona_5*0.45, meta_zona_5*0.5, meta_zona_5*0.75, meta_zona_5],
                 },
                   {
-                    "name": "Manufacturas",
+                    "name": "Wednesday",
                     "type": "line",
                     "stack": "总量",
                     "areaStyle": {},
@@ -146,7 +146,7 @@ with col7:
                     "data": [meta_zona_4*0.1, meta_zona_4*0.2, meta_zona_4*0.35, meta_zona_4*0.45, meta_zona_4*0.5, meta_zona_4*0.75, meta_zona_4],
                 },
                   {
-                    "name": "Industrial",
+                    "name": "Tuesday",
                     "type": "line",
                     "stack": "总量",
                     "areaStyle": {},
@@ -154,7 +154,7 @@ with col7:
                     "data": [meta_zona_3*0.1, meta_zona_3*0.2, meta_zona_3*0.35, meta_zona_3*0.45, meta_zona_3*0.5, meta_zona_3*0.75, meta_zona_3],
                 },
                   {
-                    "name": "Servicios",
+                    "name": "Monday",
                     "type": "line",
                     "stack": "总量",
                     "areaStyle": {},
@@ -162,7 +162,7 @@ with col7:
                     "data": [meta_zona_2*0.1, meta_zona_2*0.2, meta_zona_2*0.35, meta_zona_2*0.45, meta_zona_2*0.5, meta_zona_2*0.75, meta_zona_2],
                 },
                   {
-                    "name": "Tech",
+                    "name": "Sunday",
                     "type": "line",
                     "stack": "总量",
                     "areaStyle": {},
@@ -171,7 +171,7 @@ with col7:
                 },
             ],
         }
-    st_echarts(options=options, height="600px")
+    st_echarts(options=options, height="300px")
 
 
 with st.expander("See Data & Sources"):
