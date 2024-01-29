@@ -130,7 +130,7 @@ with params_col:
                 with st.container(border=True):
                    #######################
                     # Load data
-                    df_reshaped = pd.read_csv('data/us-population-2010-2019-reshaped.csv')
+                    df_reshaped = pd.read_csv('data/us-population-2010-2019-reshaped (1).csv')
                     # USER SELECTION
                     year_list = list(df_reshaped.year.unique())[::-1]    
                     selected_year = st.selectbox('Select a year', year_list)
