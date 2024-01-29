@@ -23,6 +23,8 @@ import pytrends
 from pytrends.request import TrendReq
 import requests
 
+
+
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
 st.set_page_config(
     layout = 'wide',
@@ -52,20 +54,71 @@ colB.title(' Marketing Decission´s Team 🎯')
 
 colX, colY, colZ = st.columns(3)
 colY.header('Market Monitoring in real time')
+#ALARMS CONFIGURATION
+BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
+API_KEY = "146090ad17fa8843bc9eca97c53926b4"
+sity1 = "New York"
+sity2 = "San Francisco"
+sity3 = "Huston"
 
+URL1 = BASE_URL + "q=" + sity1 + "&appid=" + API_KEY
+URL2 = BASE_URL + "q=" + sity2 + "&appid=" + API_KEY
+
+response1 = requests.get(URL1)
+response2 = requests.get(URL2)
+
+if response1.status_code == 200:
+   # getting data in the json format
+   data1 = response1.json()
+   # getting the main dict block
+   main1 = data1['main']
+  # getting temperature
+   temperature1 = main1['temp']
+   # getting the humidity
+   humidity1 = main1['humidity']
+   # getting the pressure
+   pressure1 = main1['pressure']
+   # weather report
+   report1 = data1['weather']
+
+if response2.status_code == 200:
+   # getting data in the json format
+   data2 = response2.json()
+   # getting the main dict block
+   main2 = data2['main']
+  # getting temperature
+   temperature2 = main2['temp']
+   # getting the humidity
+   humidity2 = main2['humidity']
+   # getting the pressure
+   pressure2 = main2['pressure']
+   # weather report
+   report2 = data2['weather']
 pytrends = TrendReq(hl='en-US', tz=360)
-col4, col5, col6 = st.columns(3)
+col4, col5, col6, col7, col8 = st.columns(3)
 with col4:
     st.write("🇺🇸 USA Top10 Trending Search in last hour")
       # Google Trends data
     df1 = pytrends.trending_searches(pn='united_states')
     st.dataframe(df1.head(10))
 with col5:
+    st.write(f"{sity1:-^30}")
+    st.write(f"Temperature (Kelvins): {temperature1}")
+    st.write(f"Humidity: {humidity1}")
+    st.write(f"Pressure: {pressure1}")
+    st.write(f"Weather Report: {report1[0]['description']}")
+with col6:
     st.write("🇬🇧 UK Top10 Trending Search in last hour")
       # Google Trends data
     df2 = pytrends.trending_searches(pn='united_kingdom')
     st.dataframe(df2.head(10))
-with col6:
+with col7:
+    st.write(f"{sity2:-^30}")
+    st.write(f"Temperature (Kelvins): {temperature2}")
+    st.write(f"Humidity: {humidity2}")
+    st.write(f"Pressure: {pressure2}")
+    st.write(f"Weather Report: {report2[0]['description']}")
+with col8:
     st.write("🇨🇴 COL Top10 Trending Search in last hour")
     df3 = pytrends.trending_searches(pn='colombia')
     st.dataframe(df3.head(10))
@@ -73,9 +126,8 @@ with col6:
 
 
 
-
-
-st.header('Strategies 🗺️ & Tactics 🔫')
+colXX, colYY, colZZ = st.columns(3)
+colYY.header('Strategies 🗺️ & Tactics 🔫')
 
 
      
@@ -139,58 +191,11 @@ with col7:
             df1 = pytrends.trending_searches(pn='united_states')
             st.dataframe(df1.head(10))
         with colb:
-            #ALARMS CONFIGURATION
-            BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
-            API_KEY = "146090ad17fa8843bc9eca97c53926b4"
-            sity1 = "New York"
-            sity2 = "San Francisco"
-            sity3 = "Huston"
             
-            URL1 = BASE_URL + "q=" + sity1 + "&appid=" + API_KEY
-            URL2 = BASE_URL + "q=" + sity2 + "&appid=" + API_KEY
-
-            response1 = requests.get(URL1)
-            response2 = requests.get(URL2)
-
-            if response1.status_code == 200:
-               # getting data in the json format
-               data1 = response1.json()
-               # getting the main dict block
-               main1 = data1['main']
-              # getting temperature
-               temperature1 = main1['temp']
-               # getting the humidity
-               humidity1 = main1['humidity']
-               # getting the pressure
-               pressure1 = main1['pressure']
-               # weather report
-               report1 = data1['weather']
-            
-            if response2.status_code == 200:
-               # getting data in the json format
-               data2 = response2.json()
-               # getting the main dict block
-               main2 = data2['main']
-              # getting temperature
-               temperature2 = main2['temp']
-               # getting the humidity
-               humidity2 = main2['humidity']
-               # getting the pressure
-               pressure2 = main2['pressure']
-               # weather report
-               report2 = data2['weather']
 
             st.write("🌧 USA ☀️")
-            st.write(f"{sity1:-^30}")
-            st.write(f"Temperature (Kelvins): {temperature1}")
-            st.write(f"Humidity: {humidity1}")
-            st.write(f"Pressure: {pressure1}")
-            st.write(f"Weather Report: {report1[0]['description']}")
-            st.write(f"{sity2:-^30}")
-            st.write(f"Temperature (Kelvins): {temperature2}")
-            st.write(f"Humidity: {humidity2}")
-            st.write(f"Pressure: {pressure2}")
-            st.write(f"Weather Report: {report2[0]['description']}")
+           
+           
 
 
 
