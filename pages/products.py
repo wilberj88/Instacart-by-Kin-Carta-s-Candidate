@@ -19,10 +19,10 @@ with st.sidebar:
     image = Image.open('data/KinCartalogo.png')
     st.image(image, caption='Demo sourced by 🛒 Instacart DB and APIs of 🌧️ Open Weather and 🔎 Google Trends in Real Time 🏭 by candidate Wilber Jiménez Hernández')
     with st.expander("See Documentation"):
-    df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
-    st.subheader("Data")
-    st.write(df_orders)
-    st.subheader("Sources")
+        df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
+        st.subheader("Data")
+        st.write(df_orders)
+        st.subheader("Sources")
    
 
 st.title('Instacart Dasboard 🛒')
