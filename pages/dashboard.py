@@ -133,14 +133,9 @@ with col7:
             
             URL1 = BASE_URL + "q=" + sity1 + "&appid=" + API_KEY
             URL2 = BASE_URL + "q=" + sity2 + "&appid=" + API_KEY
-            URL3 = BASE_URL + "q=" + sity3 + "&appid=" + API_KEY
-      
-
 
             response1 = requests.get(URL1)
             response2 = requests.get(URL2)
-            response3 = requests.get(URL3)
-            
 
             if response1.status_code == 200:
                # getting data in the json format
@@ -169,20 +164,6 @@ with col7:
                pressure2 = main2['pressure']
                # weather report
                report2 = data2['weather']
-            
-            if response3.status_code == 200:
-               # getting data in the json format
-               data3 = response3.json()
-               # getting the main dict block
-               main3 = data3['main']
-              # getting temperature
-               temperature3 = main3['temp']
-               # getting the humidity
-               humidity3 = main3['humidity']
-               # getting the pressure
-               pressure3 = main3['pressure']
-               # weather report
-               report3 = data3['weather']
 
             st.write("🌧 USA ☀️")
             st.write(f"{sity1:-^30}")
