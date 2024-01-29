@@ -53,7 +53,11 @@ colA.title('Instacart Dashboard 🛒')
 colB.title(' Marketing Decission´s Team 🎯')
 
 colX, colY, colZ = st.columns(3)
-colY.header('Market Monitoring in real time')
+with colY:
+    st.header('Market Monitoring in real time')
+    current_time = time.ctime()
+    st.write("In real time monitoring at: ", current_time)
+
 #ALARMS CONFIGURATION
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
 API_KEY = "146090ad17fa8843bc9eca97c53926b4"
@@ -133,8 +137,7 @@ with col8:
 colXX, colYY, colZZ = st.columns(3)
 with colYY:
     st.header('Strategies 🗺️ & Tactics 🔫')
-    current_time = time.ctime()
-    st.write("In real time monitoring at: ", current_time)
+ 
 
      
 col5, col6, col7 = st.columns(3)
