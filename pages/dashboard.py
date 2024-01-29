@@ -95,7 +95,7 @@ if response2.status_code == 200:
    # weather report
    report2 = data2['weather']
 pytrends = TrendReq(hl='en-US', tz=360)
-col4, col5, col6, col7, col8 = st.columns(3)
+col4, col5, col6, col7, col8 = st.columns(5)
 with col4:
     st.write("🇺🇸 USA Top10 Trending Search in last hour")
       # Google Trends data
