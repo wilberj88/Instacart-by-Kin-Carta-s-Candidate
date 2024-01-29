@@ -107,21 +107,24 @@ with col5:
     st.write(f"Humidity: {humidity1}")
     st.write(f"Pressure: {pressure1}")
     st.write(f"Weather Report: {report1[0]['description']}")
+    st.write(f"{sity2:-^30}")
+    st.write(f"Temperature (Kelvins): {temperature2}")
+    st.write(f"Humidity: {humidity2}")
+    st.write(f"Pressure: {pressure2}")
+    st.write(f"Weather Report: {report2[0]['description']}")
 with col6:
     st.write("🇬🇧 UK Top10 Trending Search in last hour")
       # Google Trends data
     df2 = pytrends.trending_searches(pn='united_kingdom')
     st.dataframe(df2.head(10))
 with col7:
-    st.write(f"{sity2:-^30}")
-    st.write(f"Temperature (Kelvins): {temperature2}")
-    st.write(f"Humidity: {humidity2}")
-    st.write(f"Pressure: {pressure2}")
-    st.write(f"Weather Report: {report2[0]['description']}")
-with col8:
     st.write("🇨🇴 COL Top10 Trending Search in last hour")
     df3 = pytrends.trending_searches(pn='colombia')
     st.dataframe(df3.head(10))
+with col8:
+    st.write("🇨🇴 MEX Top10 Trending Search in last hour")
+    df4 = pytrends.trending_searches(pn='mexico')
+    st.dataframe(df4.head(10))
 
 
 
