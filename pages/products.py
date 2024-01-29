@@ -172,6 +172,6 @@ with col7:
     st_echarts(options=options, height="600px")
 
 
-st.expander("See Data"):
+with st.expander("See Data & Sources"):
     df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
     st.write(df_orders)
