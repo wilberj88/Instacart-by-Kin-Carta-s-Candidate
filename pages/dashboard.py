@@ -19,6 +19,9 @@ import sqlite3 as sq3
 import pandas.io.sql as pds
 from PIL import Image
 import seaborn as sns
+import pytrends
+from pytrends.request import TrendReq
+import requests
 
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
 st.set_page_config(
