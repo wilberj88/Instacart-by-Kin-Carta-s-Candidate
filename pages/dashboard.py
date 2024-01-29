@@ -136,7 +136,7 @@ with col8:
 
 colXX, colYY, colZZ = st.columns(3)
 with colYY:
-    st.header('Personalize Strategies 🗺️ & Tactics 🔫')
+    st.header('Personalize Strategies 🗺️')
  
 
      
@@ -148,6 +148,8 @@ with col5:
             description="By ID",
             color_name="violet-70",
             )
+        st.selectbox("Choose a focus for the strategy", ('Best Products', 'Worst Products'))
+ 
         df_productos_mas_menos_pedidos = pd.DataFrame(
                     {
                         "Top Sales": ["Top1", "Top2", "Top3"],
@@ -181,7 +183,7 @@ with col6:
             description="By States",
             color_name="violet-70",
             )
-        st.selectbox("Choose a focus for the strategy", ('Best Products', 'Worst Products', 'Best Hours', 'Worst Hours'))
+        st.selectbox("Choose a focus for the strategy", ('Best Hours', 'Worst Hours'))
         #df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
         #st.bar_chart(df_orders, x="order_hour_of_day")
 
