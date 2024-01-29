@@ -35,8 +35,7 @@ col2.metric("Best Day", "Sunday", "33%")
 col3.metric("Best Client", "ID 72.726", "25%")
 col4.metric("Best Product", "ID 24.852", "17%")
 
-df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
-st.write(df_orders)
+
 
 meta_zona_1 = 10290
 meta_zona_2 = 11986
@@ -171,3 +170,8 @@ with col7:
             ],
         }
     st_echarts(options=options, height="600px")
+
+
+st.expander("See Data"):
+    df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
+    st.write(df_orders)
