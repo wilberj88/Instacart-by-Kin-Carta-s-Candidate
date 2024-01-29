@@ -102,6 +102,7 @@ with col4:
     df1 = pytrends.trending_searches(pn='united_states')
     st.dataframe(df1.head(10))
 with col5:
+    st.write("🇺🇸 USA Weather Right Now")
     st.write(f"{sity1:-^30}")
     st.write(f"Temperature (Kelvins): {temperature1}")
     st.write(f"Humidity: {humidity1}")
