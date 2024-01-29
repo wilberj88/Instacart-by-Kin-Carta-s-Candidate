@@ -75,7 +75,7 @@ with col6:
 
 
 
-colY.header('Strategies 🗺️ & Tactics 🔫')
+st.header('Strategies 🗺️ & Tactics 🔫')
 
 
      
