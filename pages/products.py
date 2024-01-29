@@ -69,43 +69,45 @@ with col5:
 with col6:
     st.subheader("Sales Today")
     col6a, col6b = st.columns(2)
-    acelerometro2 = {
-        "tooltip": {"formatter": "{a} <br/>{b} : {c}%"},
-        "series": [
-            {
-                "name": "Pressure",
-                "type": "gauge",
-                "axisLine": {
-                    "lineStyle": {
-                        "width": 10,
+    with col6a:
+        acelerometro2 = {
+            "tooltip": {"formatter": "{a} <br/>{b} : {c}%"},
+            "series": [
+                {
+                    "name": "Pressure",
+                    "type": "gauge",
+                    "axisLine": {
+                        "lineStyle": {
+                            "width": 10,
+                        },
                     },
-                },
-                "progress": {"show": "true", "width": 10},
-                "detail": {"valueAnimation": "true", "formatter": "{value}"},
-                "data": [{"value": 50, "name": "Hour Goal"}],
-            }
-        ],
-    }
-    col6a.st_echarts(options=acelerometro2)
-    acelerometro1 = {
-        "tooltip": {"formatter": "{a} <br/>{b} : {c}%"},
-        "series": [
-            {
-                "name": "Pressure",
-                "type": "gauge",
-                "axisLine": {
-                    "lineStyle": {
-                        "width": 10,
+                    "progress": {"show": "true", "width": 10},
+                    "detail": {"valueAnimation": "true", "formatter": "{value}"},
+                    "data": [{"value": 50, "name": "Hour Goal"}],
+                }
+            ],
+        }
+        st_echarts(options=acelerometro2)
+    with col6b:
+        acelerometro1 = {
+            "tooltip": {"formatter": "{a} <br/>{b} : {c}%"},
+            "series": [
+                {
+                    "name": "Pressure",
+                    "type": "gauge",
+                    "axisLine": {
+                        "lineStyle": {
+                            "width": 10,
+                        },
                     },
-                },
-                "progress": {"show": "true", "width": 10},
-                "detail": {"valueAnimation": "true", "formatter": "{value}"},
-                "data": [{"value": 30, "name": "Day Goal"}],
-            }
-        ],
-    }
-
-    col6b.st_echarts(options=acelerometro1)
+                    "progress": {"show": "true", "width": 10},
+                    "detail": {"valueAnimation": "true", "formatter": "{value}"},
+                    "data": [{"value": 30, "name": "Day Goal"}],
+                }
+            ],
+        }
+    
+        st_echarts(options=acelerometro1)
      
 with col7:
     st.subheader("Tributación Sectorial")
