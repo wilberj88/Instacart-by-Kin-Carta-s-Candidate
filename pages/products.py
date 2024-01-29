@@ -18,7 +18,11 @@ st.set_page_config(layout="wide", page_title="Instacart Dasboard", page_icon="�
 with st.sidebar:
     image = Image.open('data/KinCartalogo.png')
     st.image(image, caption='Demo sourced by 🛒 Instacart DB and APIs of 🌧️ Open Weather and 🔎 Google Trends in Real Time 🏭 by candidate Wilber Jiménez Hernández')
-    a = st.selectbox("Choose a Strategy Dashboard", ("Products", "Offers", "Communications"), index=None, placeholder="Choose an option")
+    with st.expander("See Documentation"):
+    df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
+    st.subheader("Data")
+    st.write(df_orders)
+    st.subheader("Sources")
    
 
 st.title('Instacart Dasboard 🛒')
@@ -181,6 +185,4 @@ with col7:
     st_echarts(options=options, height="300px")
 
 
-with st.expander("See Data & Sources"):
-    df_orders =  pd.read_csv("data/Orders.csv", index_col=0)
-    st.write(df_orders)
+
