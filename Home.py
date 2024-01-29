@@ -146,15 +146,15 @@ with params_col:
                     
 
                     
-                    my_grid2 = grid(3, vertical_align="bottom")
-                    my_grid2.button("Ranking Best Clientss", use_container_width=True)
-                    my_grid2.button("Ranking Best Hours", use_container_width=True)
-                    my_grid2.button("Ranking Best Places", use_container_width=True)
-
-                    st.markdown('<p class="dashboard_title">🌎 🔎</p>', unsafe_allow_html = True)
-                    com.html("""
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2902.6990909515926!2d-1.9868735087859841!3d43.320558199425605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51a551be27a135%3A0x61b266d5c1a5f46e!2sPl.%20de%20Guip%C3%BAzcoa%2C%2016%2C%2020004%20San%20Sebasti%C3%A1n%2C%20Gipuzkoa%2C%20Espa%C3%B1a!5e0!3m2!1ses!2sco!4v1704724179680!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    """, height=300, scrolling=True)
+                   my_grid2 = grid(3, vertical_align="bottom")
+                   my_grid2.button("Ranking Best Clientss", use_container_width=True)
+                   my_grid2.button("Ranking Best Hours", use_container_width=True)
+                   my_grid2.button("Ranking Best Places", use_container_width=True)
+    
+                   st.markdown('<p class="dashboard_title">🌎 🔎</p>', unsafe_allow_html = True)
+                   com.html("""
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2902.6990909515926!2d-1.9868735087859841!3d43.320558199425605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51a551be27a135%3A0x61b266d5c1a5f46e!2sPl.%20de%20Guip%C3%BAzcoa%2C%2016%2C%2020004%20San%20Sebasti%C3%A1n%2C%20Gipuzkoa%2C%20Espa%C3%B1a!5e0!3m2!1ses!2sco!4v1704724179680!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                   """, height=300, scrolling=True)
                  
                        
                     
