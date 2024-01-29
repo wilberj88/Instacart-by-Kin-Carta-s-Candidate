@@ -134,17 +134,17 @@ with params_col:
                     # Load data
                    df_reshaped = pd.read_csv('data/us-population-2010-2019-reshaped (1).csv')
                     # USER SELECTION
-                    year_list = list(df_reshaped.year.unique())[::-1]    
-                    selected_year = st.selectbox('Select a year', year_list)
-                    df_selected_year = df_reshaped[df_reshaped.year == selected_year]
-                    df_selected_year_sorted = df_selected_year.sort_values(by="population", ascending=False)
+                   year_list = list(df_reshaped.year.unique())[::-1]    
+                   selected_year = st.selectbox('Select a year', year_list)
+                   df_selected_year = df_reshaped[df_reshaped.year == selected_year]
+                   df_selected_year_sorted = df_selected_year.sort_values(by="population", ascending=False)
                     
-                    color_theme_list = ['blues', 'cividis', 'greens', 'inferno', 'magma', 'plasma', 'reds', 'rainbow', 'turbo', 'viridis']
-                    selected_color_theme = st.selectbox('Select a color theme', color_theme_list)
-                    choropleth = make_choropleth(df_selected_year, 'states_code', 'population', selected_color_theme)
-                    st.plotly_chart(choropleth, use_container_width=True)
-    
-    
+                   color_theme_list = ['blues', 'cividis', 'greens', 'inferno', 'magma', 'plasma', 'reds', 'rainbow', 'turbo', 'viridis']
+                   selected_color_theme = st.selectbox('Select a color theme', color_theme_list)
+                   choropleth = make_choropleth(df_selected_year, 'states_code', 'population', selected_color_theme)
+                   st.plotly_chart(choropleth, use_container_width=True)
+                    
+
                     
                     my_grid2 = grid(3, vertical_align="bottom")
                     my_grid2.button("Ranking Best Clientss", use_container_width=True)
