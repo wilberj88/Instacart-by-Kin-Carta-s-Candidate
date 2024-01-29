@@ -132,7 +132,7 @@ with params_col:
                    st.header("Principal Oportunities by 🇺🇸 States")
                     #######################
                     # Load data
-                    df_reshaped = pd.read_csv('data/us-population-2010-2019-reshaped (1).csv')
+                   df_reshaped = pd.read_csv('data/us-population-2010-2019-reshaped (1).csv')
                     # USER SELECTION
                     year_list = list(df_reshaped.year.unique())[::-1]    
                     selected_year = st.selectbox('Select a year', year_list)
@@ -143,8 +143,8 @@ with params_col:
                     selected_color_theme = st.selectbox('Select a color theme', color_theme_list)
                     choropleth = make_choropleth(df_selected_year, 'states_code', 'population', selected_color_theme)
                     st.plotly_chart(choropleth, use_container_width=True)
-
-
+    
+    
                     
                     my_grid2 = grid(3, vertical_align="bottom")
                     my_grid2.button("Ranking Best Clientss", use_container_width=True)
