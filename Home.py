@@ -18,6 +18,7 @@ import streamlit.components.v1 as com
 import sqlite3 as sq3
 import pandas.io.sql as pds
 from PIL import Image
+import plotly.express as px
 
 st.set_page_config(
     layout = 'wide',
