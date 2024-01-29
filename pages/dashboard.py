@@ -131,9 +131,10 @@ with col8:
 
 
 colXX, colYY, colZZ = st.columns(3)
-colYY.header('Strategies 🗺️ & Tactics 🔫')
-current_time = time.ctime()
-colYY.write("In real time monitoring at: ", current_time)
+with colYY:
+    st.header('Strategies 🗺️ & Tactics 🔫')
+    current_time = time.ctime()
+    st.write("In real time monitoring at: ", current_time)
 
      
 col5, col6, col7 = st.columns(3)
